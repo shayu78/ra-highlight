@@ -40,21 +40,16 @@ function Video(props) {
   )
 };
 
+const RatingVideoBorder = RatingBorder(Video);
+const RatingArticleBorder = RatingBorder(Article);
+
 function List(props) {
   return props.list.map((item, index) => {
     switch (item.type) {
       case 'video':
-        const RatingVideoBorder = RatingBorder(Video);
-        return (
-          <RatingVideoBorder key={index} {...item} />
-        );
-
+        return <RatingVideoBorder key={index} {...item} />
       case 'article':
-        const RatingArticleBorder = RatingBorder(Article);
-        return (
-          <RatingArticleBorder key={index} {...item} />
-        );
-
+        return <RatingArticleBorder key={index} {...item} />
       default:
         return false;
     }
