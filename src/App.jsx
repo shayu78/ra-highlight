@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from 'react';
 import './App.css';
-import RatingBorder from './components/RatingBorder/RatingBorder';
+import withHighlight from './components/RatingBorder/RatingBorder';
 
 export function New(props) {
   return (
@@ -40,8 +40,8 @@ function Video(props) {
   )
 };
 
-const RatingVideoBorder = RatingBorder(Video);
-const RatingArticleBorder = RatingBorder(Article);
+const RatingVideoBorder = withHighlight(Video);
+const RatingArticleBorder = withHighlight(Article);
 
 function List(props) {
   return props.list.map((item, index) => {

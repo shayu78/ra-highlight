@@ -1,6 +1,6 @@
 import { New, Popular } from '../../App';
 
-export default function RatingBorder(Component) {
+export default function withHighlight(Component) {
   return function (props) {
     if (props.views >= 1000) return (
       <Popular>
